@@ -1,3 +1,9 @@
+# revision 18951
+# category Package
+# catalog-ctan /macros/latex/contrib/datenumber
+# catalog-date 2006-11-16 11:36:05 +0100
+# catalog-license lppl
+# catalog-version 0.02
 Name:		texlive-datenumber
 Version:	0.02
 Release:	1
@@ -54,6 +60,7 @@ Gregorian calendar reform are considered.
 #- source
 %doc %{_texmfdistdir}/source/latex/datenumber/datenumber.dtx
 %doc %{_texmfdistdir}/source/latex/datenumber/datenumber.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -64,3 +71,5 @@ Gregorian calendar reform are considered.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
