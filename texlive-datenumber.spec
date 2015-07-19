@@ -6,7 +6,7 @@
 # catalog-version 0.02
 Name:		texlive-datenumber
 Version:	0.02
-Release:	9
+Release:	10
 Summary:	Convert a date into a number and vice versa
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/datenumber
