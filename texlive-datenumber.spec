@@ -1,6 +1,6 @@
 Name:		texlive-datenumber
 Version:	61761
-Release:	1
+Release:	2
 Summary:	Convert a date into a number and vice versa
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/datenumber
