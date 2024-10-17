@@ -3,7 +3,7 @@ Version:	61761
 Release:	2
 Summary:	Convert a date into a number and vice versa
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/datenumber
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/datenumber
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/datenumber.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/datenumber.doc.r%{version}.tar.xz
