@@ -1,46 +1,25 @@
-Name:		texlive-datenumber
-Version:	61761
-Release:	2
+%global tl_name datenumber
+%global tl_revision 78101
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.03
+Release:	%{tl_revision}.1
 Summary:	Convert a date into a number and vice versa
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/datenumber
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/datenumber.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/datenumber.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/datenumber.source.r%{version}.tar.xz
+License:	lppl1.2
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/datenumber.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/datenumber.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/datenumber.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides commands to convert a date into a number
-and vice versa. Additionally there are commands for
-incrementing and decrementing a date. Leap years and the
-Gregorian calendar reform are considered.
+This package provides commands to convert a date into a number and vice
+versa. Additionally there are commands for incrementing and decrementing
+a date. Leap years and the Gregorian calendar reform are considered.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/datenumber
-%doc %{_texmfdistdir}/doc/latex/datenumber
-#- source
-%doc %{_texmfdistdir}/source/latex/datenumber
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
